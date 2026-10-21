@@ -1,0 +1,63 @@
+{
+  "info": {
+    "name": "IU Digital - Peliculas EA1",
+    "description": "CRUD de Generos, Directores, Productoras, Tipos y Media.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "id", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "Salud",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/health" }
+    },
+    {
+      "name": "Generos",
+      "item": [
+        { "name": "Listar", "request": { "method": "GET", "url": "{{baseUrl}}/api/generos" } },
+        { "name": "Crear", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Comedia\",\n  \"estado\": true,\n  \"descripcion\": \"Producciones orientadas al humor.\"\n}" }, "url": "{{baseUrl}}/api/generos" } },
+        { "name": "Actualizar", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Comedia\",\n  \"estado\": true,\n  \"descripcion\": \"Descripcion actualizada.\"\n}" }, "url": "{{baseUrl}}/api/generos/{{id}}" } },
+        { "name": "Eliminar", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/generos/{{id}}" } }
+      ]
+    },
+    {
+      "name": "Directores",
+      "item": [
+        { "name": "Listar", "request": { "method": "GET", "url": "{{baseUrl}}/api/directores" } },
+        { "name": "Crear", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nombres\": \"Greta Gerwig\",\n  \"estado\": true\n}" }, "url": "{{baseUrl}}/api/directores" } },
+        { "name": "Actualizar", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nombres\": \"Greta Gerwig\",\n  \"estado\": true\n}" }, "url": "{{baseUrl}}/api/directores/{{id}}" } },
+        { "name": "Eliminar", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/directores/{{id}}" } }
+      ]
+    },
+    {
+      "name": "Productoras",
+      "item": [
+        { "name": "Listar", "request": { "method": "GET", "url": "{{baseUrl}}/api/productoras" } },
+        { "name": "Crear", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Warner Bros.\",\n  \"estado\": true,\n  \"slogan\": \"Entretenimiento\",\n  \"descripcion\": \"Productora audiovisual.\"\n}" }, "url": "{{baseUrl}}/api/productoras" } },
+        { "name": "Actualizar", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Warner Bros.\",\n  \"estado\": true,\n  \"slogan\": \"Historias para todos\",\n  \"descripcion\": \"Productora actualizada.\"\n}" }, "url": "{{baseUrl}}/api/productoras/{{id}}" } },
+        { "name": "Eliminar", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/productoras/{{id}}" } }
+      ]
+    },
+    {
+      "name": "Tipos",
+      "item": [
+        { "name": "Listar", "request": { "method": "GET", "url": "{{baseUrl}}/api/tipos" } },
+        { "name": "Crear", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Documental\",\n  \"descripcion\": \"Produccion de caracter documental.\"\n}" }, "url": "{{baseUrl}}/api/tipos" } },
+        { "name": "Actualizar", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Documental\",\n  \"descripcion\": \"Descripcion actualizada.\"\n}" }, "url": "{{baseUrl}}/api/tipos/{{id}}" } },
+        { "name": "Eliminar", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/tipos/{{id}}" } }
+      ]
+    },
+    {
+      "name": "Media",
+      "item": [
+        { "name": "Listar", "request": { "method": "GET", "url": "{{baseUrl}}/api/media" } },
+        { "name": "Crear", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"serial\": \"PEL-001\",\n  \"titulo\": \"Pelicula de ejemplo\",\n  \"sinopsis\": \"Sinopsis de prueba.\",\n  \"url_pelicula\": \"https://example.com/pelicula\",\n  \"imagen_portada\": \"https://example.com/portada.jpg\",\n  \"anio_estreno\": 2026,\n  \"genero_id\": 1,\n  \"director_id\": 1,\n  \"productora_id\": 1,\n  \"tipo_id\": 1\n}" }, "url": "{{baseUrl}}/api/media" } },
+        { "name": "Actualizar", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"serial\": \"PEL-001\",\n  \"titulo\": \"Pelicula actualizada\",\n  \"sinopsis\": \"Sinopsis actualizada.\",\n  \"url_pelicula\": \"https://example.com/pelicula\",\n  \"imagen_portada\": \"https://example.com/portada.jpg\",\n  \"anio_estreno\": 2026,\n  \"genero_id\": 1,\n  \"director_id\": 1,\n  \"productora_id\": 1,\n  \"tipo_id\": 1\n}" }, "url": "{{baseUrl}}/api/media/{{id}}" } },
+        { "name": "Eliminar", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/media/{{id}}" } }
+      ]
+    }
+  ]
+}
+
