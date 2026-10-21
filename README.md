@@ -5,7 +5,7 @@ API REST de la EA1 de Ingeniería Web II para gestionar un catálogo audiovisual
 ## Estado de la entrega
 
 - Base de datos PostgreSQL creada en la conexión **IU Digital - Supabase**.
-- Proyecto Supabase usado: `mwqsbjkfztphrxosbphj` (en el panel aún aparece con el nombre genérico de la cuenta).
+- Proyecto Supabase usado: `proyecto-integrado-ii-iu-digital` (`mwqsbjkfztphrxosbphj`).
 - Esquema versionado en `supabase/migrations`.
 - API Node.js y Express con GET, POST, PUT y DELETE para los cinco módulos.
 - Validación de entrada, consultas parametrizadas, manejo uniforme de errores, CORS y cabeceras seguras.
