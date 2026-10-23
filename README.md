@@ -11,7 +11,6 @@ API REST de la EA1 de Ingeniería Web II para gestionar un catálogo audiovisual
 - Validación de entrada, consultas parametrizadas, manejo uniforme de errores, CORS y cabeceras seguras.
 - Colección de Postman incluida.
 - Pruebas automatizadas incluidas.
-- Guía de continuidad para React (EA2) y despliegue (EA3).
 
 ## Modelo de datos
 
@@ -25,7 +24,7 @@ API REST de la EA1 de Ingeniería Web II para gestionar un catálogo audiovisual
 
 La base de datos valida mediante un trigger que una media solo pueda relacionarse con un género, director y productora activos. El tipo debe existir. Las fechas de actualización se modifican automáticamente.
 
-Las cinco tablas tienen Row Level Security habilitado. `anon` y `authenticated` no poseen permisos directos: la aplicación accede mediante la conexión PostgreSQL privada del servidor. Nunca se debe exponer `DATABASE_URL` en React.
+Las cinco tablas tienen Row Level Security habilitado. `anon` y `authenticated` no poseen permisos directos: la aplicación accede mediante la conexión PostgreSQL privada del servidor. `DATABASE_URL` es una variable privada del servidor y no se incluye en clientes ni en el repositorio.
 
 ## Requisitos
 
@@ -40,7 +39,7 @@ cp .env.example .env
 npm run dev
 ```
 
-En `.env`, reemplaza `DATABASE_URL` con la cadena de **Session pooler** mostrada en Supabase > Connect. Esta modalidad es apropiada para un backend persistente y funciona en redes IPv4. No confirmes `.env` en Git.
+La variable `DATABASE_URL` debe contener la cadena privada de **Session pooler** mostrada en Supabase > Connect. Esta modalidad es apropiada para un backend persistente y funciona en redes IPv4. El archivo `.env` está excluido del control de versiones mediante `.gitignore`.
 
 La API queda disponible en `http://localhost:3000`. Comprueba la conexión con:
 
@@ -112,10 +111,4 @@ src/
 supabase/       migraciones SQL
 postman/        colección para pruebas manuales
 test/           pruebas automatizadas
-docs/           continuidad EA2, EA3 y video
 ```
-
-## Continuidad académica
-
-La preparación de React para EA2 y del despliegue para EA3 está en `docs/EA2_EA3.md`. El apoyo para el video individual de 3 a 5 minutos está en `docs/guion-video-3-5-min.md`.
-
